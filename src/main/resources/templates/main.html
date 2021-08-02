@@ -19,18 +19,27 @@
         <h1>There are some things to do!
         </h1>
     </div>
-    <div class="col-md-4 mt-3" th:block th:each="thing : ${things}">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title" th:text="${thing.name}">Title</h5>
-
-                <p class="card-text" th:text="${thing.data}">
-                    Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                    amet, consectetur, adipisci velit...
-                </p>
-            </div>
-        </div>
+    <div id="app">
+        {{ info }}
+        <div v-for="person in info"></div>
+        {{ person.id }} {{ person.name }}
     </div>
+<!--    <div class="col-md-4 mt-3" th:block th:each="thing : ${things}">-->
+<!--        <div class="card">-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-title" th:text="${thing.name}">Title</h5>-->
+
+<!--                <p class="card-text" th:text="${thing.data}">-->
+<!--                    Neque porro quisquam est qui dolorem ipsum quia dolor sit-->
+<!--                    amet, consectetur, adipisci velit...-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/script2.js"></script>
 </body>
 </html>

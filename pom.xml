@@ -84,6 +84,19 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>7.11.4</version>
+				<configuration>
+					<configFiles>
+						<configFile>src/main/resources/flyway.conf</configFile>
+					</configFiles>
+<!--					<url>jdbc:h2:file:~/IdeaProjects/calorizer/calorizer-backend/H2data/demodb</url>-->
+<!--					<user>sa</user>-->
+<!--					<password>password</password>-->
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

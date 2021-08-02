@@ -1,0 +1,16 @@
+-- USERS
+DROP TABLE IF EXISTS things;
+CREATE TABLE things
+(
+    id   INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    name VARCHAR(20) NOT NULL,
+    data VARCHAR(200) NOT NULL
+);
+
+-- INSERTS
+INSERT INTO things (name, data)
+VALUES
+('Bob', '$2a$10$P9E9Yp1vgAtCrj4viVaSk.PTR7kleLww1N6e1T0OK8rH0Tj6lN7wm'),
+('Alex', '$2a$10$P9E9Yp1vgAtCrj4viVaSk.PTR7kleLww1N6e1T0OK8rH0Tj6lN7wm'),
+('Vlad', '$2a$10$P9E9Yp1vgAtCrj4viVaSk.PTR7kleLww1N6e1T0OK8rH0Tj6lN7wm')
+;
