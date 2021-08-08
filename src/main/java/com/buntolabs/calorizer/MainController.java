@@ -24,7 +24,7 @@ public class MainController {
     @GetMapping("/")
     public String notes(Model model) {
 //        model.addAttribute("things", service.getThings());
-        model.addAttribute("things", productService.findAll());
+        model.addAttribute("products", productService.findAll());
         return "main";
     }
 }

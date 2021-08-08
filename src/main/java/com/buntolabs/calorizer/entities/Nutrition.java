@@ -1,9 +1,12 @@
 package com.buntolabs.calorizer.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "nutritious")
+@Data
 public class Nutrition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

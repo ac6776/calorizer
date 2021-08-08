@@ -1,8 +1,12 @@
 package com.buntolabs.calorizer.entities;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -21,4 +25,10 @@ public class Product {
         joinColumns = {@JoinColumn(name = "id", referencedColumnName = "product_id")})
     @MapKeyColumn(name = "nutrition_name")
     private Map<Nutrition, Integer> nutritiousWeightMap;
+    @CreationTimestamp
+    @Column(updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime creation;
+    @UpdateTimestamp
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime updated;
 }

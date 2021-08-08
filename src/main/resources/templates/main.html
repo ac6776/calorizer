@@ -17,6 +17,19 @@
 <div class="container">
     <h1>Calorizer Home</h1>
     <a href="http://localhost:8080">Go front</a>
+    <div th:each="product: ${products}">
+        <h1 th:text="${product.product_title}"></h1>
+        <p th:text="${product.product_description}"></p>
+        <p th:text="${product.creation}"></p>
+        <p th:text="${product.updated}"></p>
+        <ul th:each="nutrition : ${product.getNutritiousWeightMap()}">
+            <li>
+                <span th:text="${nutrition.key.nutrition_name}"></span>
+                <span th:text="${nutrition.value}"></span>
+            </li>
+        </ul>
+    </div>
+
 </div>
 </body>
 </html>
