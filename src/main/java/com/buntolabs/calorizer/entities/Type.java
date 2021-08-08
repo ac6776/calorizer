@@ -1,4 +1,5 @@
 package com.buntolabs.calorizer.entities;
 
-public class NutritionFacts {
+public enum Type {
+    MACRO, MICRO
 }

@@ -3,6 +3,7 @@ package com.buntolabs.calorizer.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,5 +14,6 @@ public class Product {
     private Long id;
     private String title;
     private String description;
-
+    @OneToMany
+    private List<Nutrition> nutritions;
 }
