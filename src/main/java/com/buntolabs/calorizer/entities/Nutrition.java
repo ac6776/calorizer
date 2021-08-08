@@ -15,6 +15,7 @@ public class Nutrition {
     @Column(nullable = false)
     private String nutrition_name;
     @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private Type nutrition_type;
     private String nutrition_description;
 }
