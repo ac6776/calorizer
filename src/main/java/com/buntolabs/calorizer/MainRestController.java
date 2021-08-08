@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500")
-@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping("/api/v1")
 public class MainRestController {
     private ThingService service;
 
