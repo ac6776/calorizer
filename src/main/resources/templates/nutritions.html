@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Main page</title>
+    <meta charset="UTF-8" />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<div class="container">
+    <h1>Nutritious list</h1>
+    <div th:each="nutrition: ${nutritious}">
+<!--        <div th:if="${nutrition.nutrition_type.name().equals('VITAMIN')}">-->
+        <div>
+            <h3 th:text="${nutrition.nutrition_name}"></h3>
+            <ul th:each="detail : ${nutrition.getDetails()}">
+                <li>
+                    <span th:text="${detail.title}"></span>
+                    <span th:text="${detail.value}"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

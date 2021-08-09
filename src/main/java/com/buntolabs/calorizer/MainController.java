@@ -8,13 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-    private ThingService service;
     private ProductService productService;
-
-    @Autowired
-    public void setService(ThingService service) {
-        this.service = service;
-    }
 
     @Autowired
     public void setProductService(ProductService productService) {
@@ -23,7 +17,6 @@ public class MainController {
 
     @GetMapping("/")
     public String notes(Model model) {
-//        model.addAttribute("things", service.getThings());
         model.addAttribute("products", productService.findAll());
         return "main";
     }
