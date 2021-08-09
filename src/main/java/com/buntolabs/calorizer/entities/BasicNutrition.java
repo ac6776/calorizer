@@ -5,6 +5,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @MappedSuperclass
 public abstract class BasicNutrition {
@@ -18,4 +19,6 @@ public abstract class BasicNutrition {
     @UpdateTimestamp
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updated;
+    @OneToMany (cascade = CascadeType.ALL, targetEntity = Img.class)
+    private List<Img> images;
 }
